@@ -32,6 +32,25 @@ body {
     min-height: 100vh;
 }
 
+/* Boton de whatsApp */
+.boton-whatsapp{
+    position: fixed;
+    bottom: 1em;
+    left: 1em;
+    background-color: #4dc247;
+    padding: .6em;
+    border-radius: 100%;
+    color: #fff;
+    font-size: 2.3em;
+
+}
+
+.boton-whatsapp:hover{
+    background-color: #128c7e;
+    transition: background-color .5s ease-in-out;
+
+}
+
 main {
     flex: 1;
 }
