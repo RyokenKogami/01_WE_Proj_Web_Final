@@ -1,0 +1,335 @@
+:root {
+    --color-principal-oscuro: #6f4e37;
+    --color-fondo-claro: #d2b48c;
+    --color-acento: #8b4513;
+    --color-texto-oscuro: #333333;
+    --color-fondo-tarjeta: #f5f5dc;
+    --sombra-color: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: var(--color-fondo-claro);
+    color: var(--color-texto-oscuro);
+    padding-top: 50px; /* espacio para el encabezado fijo */
+}
+.main {
+    flex: 1;
+}
+
+/* Boton de whatsApp */
+.boton-whatsapp{
+    position: fixed;
+    bottom: 1em;
+    left: 1em;
+    background-color: #4dc247;
+    padding: .6em;
+    border-radius: 100%;
+    color: #fff;
+    font-size: 2.3em;
+    text-decoration: none;
+
+}
+
+.boton-whatsapp:hover{
+    background-color: #128c7e;
+    transition: background-color .5s ease-in-out;
+
+}
+
+/* ENCABEZADO MENU */
+/* Cabecera y Navegaciones */
+#cabecera-principal {
+    background-color: var(--color-principal-oscuro);
+    color: var(--color-fondo-tarjeta);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px var(--sombra-color);
+}
+
+.nombre-logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-principal ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-principal ul li a {
+    color: var(--color-fondo-tarjeta);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-principal ul li a:hover {
+    background-color: var(--color-acento);
+}
+
+.espacio-cabecera {
+    height: 80px;
+}
+
+.nav-secundaria {
+    background-color: var(--color-acento);
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px var(--sombra-color);
+    position: fixed;
+    top: 60px;
+    width: 100%;
+    z-index: 999;
+}
+
+.nav-secundaria ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-secundaria ul li a {
+    color: var(--color-fondo-tarjeta);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-secundaria ul li a:hover {
+    background-color: var(--color-principal-oscuro);
+    transform: translateY(-2px);
+}
+/* FIN ENCABEZADO MENU */
+
+/* SECCION PROMOCIONES */
+.encabezado {
+    width: 100%;
+    height: 300px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.encabezado img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.promociones {
+    padding: 30px;
+    text-align: center;
+}
+
+.promociones h2 {
+    font-size: 2em;
+    color: var(--color-principal-oscuro);
+    margin-bottom: 20px;
+}
+
+.contenedor-promociones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.tarjeta-promocion {
+    background-color: var(--color-fondo-tarjeta);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--sombra-color);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.tarjeta-promocion:hover {
+    transform: translateY(-10px);
+}
+
+.tarjeta-promocion img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.tarjeta-promocion .info {
+    padding: 15px;
+}
+
+.tarjeta-promocion h3 {
+    color: var(--color-acento);
+    margin-bottom: 10px;
+}
+
+.tarjeta-promocion p {
+    margin-bottom: 15px;
+}
+
+.btn {
+    padding: 10px 15px;
+    background-color: var(--color-acento);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--color-principal-oscuro);
+}
+
+@media (max-width: 768px) {
+    .contenedor-promociones {
+        grid-template-columns: 1fr;
+    }
+}
+/* Sección Tiendas */
+.tiendas {
+    padding: 40px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tiendas h2 {
+    font-size: 2em;
+    color: var(--color-principal-oscuro);
+    margin-bottom: 40px;
+}
+
+.contenedor-tiendas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.tarjeta-tienda {
+    background-color: var(--color-fondo-tarjeta);
+    border-radius: 12px;
+    box-shadow: 0 6px 15px var(--sombra-color);
+    padding: 20px;
+    width: 600px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 50px;
+}
+
+.tarjeta-tienda:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px var(--sombra-color);
+}
+
+.tarjeta-tienda h3 {
+    color: var(--color-acento);
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.tarjeta-tienda p {
+    margin: 5px 0;
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .contenedor-tiendas {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tarjeta-tienda {
+        width: 90%;
+    }
+}
+
+/* Sección Pie de Página */
+footer {
+    background-color: var(--color-fondo-tarjeta);
+    color: var(--color-texto-oscuro);
+    padding: 20px 0;
+    margin-top: 50px;
+    box-shadow: 0 -2px 8px var(--sombra-color);
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.seccion-pie-pagina {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    min-width: 160px;
+    padding: 10px 0;
+    border-right: 1px solid var(--borde-claro);
+}
+
+.seccion-pie-pagina:last-child {
+    border-right: none;
+}
+
+.seccion-pie-pagina i {
+    font-size: 2em;
+    color: var(--color-principal-oscuro);
+    margin-bottom: 8px;
+}
+
+.seccion-pie-pagina p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.seccion-pie-pagina h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--color-principal-oscuro);
+    font-size: 1.1em;
+}
+
+.redes-sociales .iconos-sociales {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.redes-sociales .iconos-sociales a {
+    color: var(--color-principal-oscuro);
+    font-size: 1.8em;
+    transition: color 0.3s ease;
+}
+
+.redes-sociales .iconos-sociales a:hover {
+    color: var(--color-acento);
+}
