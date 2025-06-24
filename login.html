@@ -95,5 +95,70 @@
             </section>
         </section>
     </article>      
+
+   <!-- Inicio de Script -->
+<!-- Se reviso dicha documentacion de:  -->
+<!-- EventTarget.addEventListener() -->
+<!-- Elemento.classList -->
+<!-- Ventana.scrollY -->
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Lógica de cambio de categorías del menú
+            const botonesMenu = document.querySelectorAll(".boton-menu");
+            const categoriasMenu = document.querySelectorAll(".categoria-menu");
+
+            botonesMenu.forEach((boton) => {
+                boton.addEventListener("click", () => {
+                    botonesMenu.forEach((btn) => btn.classList.remove("activo"));
+                    boton.classList.add("activo");
+
+                    const categoriaAMostrar = boton.dataset.category + "-category";
+
+                    categoriasMenu.forEach((categoria) =>
+                        categoria.classList.add("oculto")
+                    );
+                    document
+                        .getElementById(categoriaAMostrar)
+                        .classList.remove("oculto");
+                });
+            });
+
+            // Lógica de ocultar/mostrar cabecera al hacer scroll
+            const cabecera = document.getElementById("cabecera-principal");
+            let ultimaPosicionScrollY = window.scrollY;
+            const alturaCabecera = cabecera.offsetHeight;
+
+            // Ajustar la altura del espacio-cabecera dinámicamente
+            const espacioCabecera = document.querySelector(".espacio-cabecera");
+            espacioCabecera.style.height = `${alturaCabecera}px`;
+
+            window.addEventListener("scroll", () => {
+                const posicionScrollYActual = window.scrollY;
+
+                // Desplazamiento hacia abajo
+                // Permite Añadir un pequeño umbral de scroll para evitar ocultar/mostrar en pequeños scrolls
+                if (
+                    posicionScrollYActual > ultimaPosicionScrollY &&
+                    posicionScrollYActual > alturaCabecera + 50
+                ) {
+                    cabecera.classList.add("cabecera-oculta");
+                }
+                // Desplazamiento hacia arriba O cerca de la parte superior de la página
+                else if (
+                    posicionScrollYActual < ultimaPosicionScrollY ||
+                    posicionScrollYActual < 50
+                ) {
+                    // Mostrar si se desplaza hacia arriba o muy cerca de la parte superior
+                    cabecera.classList.remove("cabecera-oculta");
+                }
+
+                ultimaPosicionScrollY = posicionScrollYActual;
+            });
+        });
+    </script>
+    <!-- Fin de Script -->
+
+
 </body>
 </html>
