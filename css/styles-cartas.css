@@ -1,55 +1,179 @@
 /* 1.Selector Padre o Principal */
-:root {
-    /* Colores Principales */
-    --color-principal-oscuro: #6f4e37;
-    --color-fondo-claro: #d2b48c;
-    --color-acento: #8b4513;
-    --color-texto-oscuro: #333333;
-    --color-fondo-tarjeta: #f5f5dc;
 
-    /* Sonbra y Bordes */
-    --sombra-color: rgba(0, 0, 0, 0.1);
-    --borde-claro: rgba(0, 0, 0, 0.05);
+:root {
+  /* Colores Principales */
+  --color-principal-oscuro: #6f4e37;
+  --color-fondo-claro: #d2b48c;
+  --color-acento: #8b4513;
+  --color-texto-oscuro: #333333;
+  --color-fondo-tarjeta: #f5f5dc;
+  --sombra-color: rgba(0, 0, 0, 0.1);
+  --borde-claro: rgba(0, 0, 0, 0.05);
+}
+
+/* Selector Universal: sirve para formatear el navegador */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*para que no haya desbordamiento*/
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  background-color: var(--color-fondo-tarjeta);
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  height: 100vh;
-  font-family: sans-serif;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-fondo-claro);
+    color: var(--color-texto-oscuro);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.pdf-container {
-  background-color: var(--color-acento);
-  width: 100vw;
-  height: 100vh;  
-  overflow: hidden;
+main {
+  flex: 1;
+}
 
+/* CABECERA PRINCIPAL FIJA */
+#cabecera-principal {
+  background-color: var(--color-principal-oscuro);
+  color: var(--color-fondo-claro);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px var(--sombra-color);
+  transition: transform 0.3s ease-out;
+}
+
+.cabecera-oculta {
+  transform: translateY(-100%);
+}
+
+/* ESPACIO PARA QUE EL CONTENIDO NO QUEDE DETRÁS DEL HEADER */
+.espacio-cabecera {
+  height: 68px;
+  width: 100%;
+}
+
+/* LOGO / NOMBRE MARCA */
+.nombre-logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--color-fondo-claro);
+  white-space: nowrap;
+}
+
+/* MENÚ PRINCIPAL (INICIO, LOGIN, REGISTRO) */
+.nav-principal ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  
+}
+
+.nav-principal ul li {
+    margin-left: 20px;
+}
+
+.nav-principal ul li a {
+  color: var(--color-fondo-claro);
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.95em;
+  transition: background-color 0.3s ease;
+}
+
+.nav-principal ul li a:hover {
+  background-color: var(--color-acento);
+}
+
+/* MENÚ SECUNDARIO (CARTA, PROMOCIONES, TIENDAS) */
+.nav-secundaria {
+  background-color: var(--color-acento);
+  padding: 10px 0;
+  text-align: center;
+  box-shadow: 0 2px 5px var(--sombra-color);
+  position: relative;
+  z-index: 900;
+}
+
+.nav-secundaria ul {
+  list-style: none;
+  margin: 0;  
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 0;
+}
+
+.nav-secundaria ul li a {
+  color: var(--color-fondo-claro);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: block;
+}
+
+.nav-secundaria ul li a:hover {
+  background-color: var(--color-principal-oscuro);
+  transform: translateY(-2px);
+}
+
+/* CONTENEDOR PDF */
+.pdf-container {
+  background-color: var(--color-fondo-claro);
+  width: 100%;
+  height: calc(100vh - 140px); 
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  
 }
 
 .pdf-container iframe {
   width: 60%;
   height: 100%;
-  background-color: var(--color-acento)
+  background-color: var(--color-acento);
   border: none;
 }
 
-@media screen and (max-width: 800px) {
-  .pdf-container {
-    width: 100%;
-    height: 100vh;
-    box-shadow: none;
+/* RESPONSIVE: TABLET Y MÓVIL */
+@media (max-width: 768px) {
+  #cabecera-principal {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav-principal ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav-secundaria ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-secundaria ul li a {
+    font-size: 1em;
+    padding: 6px 10px;
+  }
+
+  .pdf-container iframe {
+    width: 90%;
   }
 }
-
-
-
