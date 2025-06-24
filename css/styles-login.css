@@ -580,6 +580,35 @@ select {
         width: 95%;
     }
 
+    #cabecera-principal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav-secundaria {
+  position: fixed;
+  top: 70px; /* justo debajo del header */
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.espacio-cabecera {
+  height: 120px; /* 70px del header + 50px de la nav secundaria */
+}
+
+    .container {
+  min-height: calc(100vh - 120px); /* espacio restante debajo de las dos barras */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2em;
+}
+
+
     /* Footer grid layout para <= 480px */
     footer {
         display: grid;
