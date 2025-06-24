@@ -5,8 +5,18 @@
     --color-parrafos: #000000;
     --color-titulos: #282D31;
     --color-fondo: #FCFCFC;
-  
-  }
+    --sombra-color: rgba(0, 0, 0, 0.1);
+    --borde-claro: rgba(0, 0, 0, 0.1);
+
+
+        /* Colores Principales */
+    --color-principal-oscuro: #6f4e37;
+    --color-fondo-claro: #d2b48c;
+    --color-acento: #8b4513;
+    --color-texto-oscuro: #333333;
+    --color-fondo-tarjeta: #f5f5dc;
+        
+}
 
 /* 2. SELECTOR DE CLASE (CLASS): EL PUNTO ( . ) */
 
@@ -51,6 +61,40 @@
     padding: 0;
     box-sizing: border-box;
   }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-fondo-claro);
+    color: var(--color-texto-oscuro);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Boton de whatsApp */
+.boton-whatsapp{
+    position: fixed;
+    bottom: 1em;
+    left: 1em;
+    background-color: #4dc247;
+    padding: .6em;
+    border-radius: 100%;
+    color: #fff;
+    font-size: 2.3em;
+
+}
+
+.boton-whatsapp:hover{
+    background-color: #128c7e;
+    transition: background-color .5s ease-in-out;
+
+}
+
+main {
+    flex: 1;
+}
 
 /* Estilos Cabecera y Efecto Ocultar-Mostrar */
 #cabecera-principal {
@@ -75,8 +119,9 @@
 
 /* Espacio cabecera fija */
 .espacio-cabecera {
-    background-color: transparent;
+    background-color: var(--color-acento);
     width: 100%;
+     height: 70px;
 }
 
 .nombre-logo {
@@ -139,6 +184,165 @@
     background-color: var(--color-principal-oscuro);
     transform: translateY(-2px);
 }
+
+/* Sección del Menú */
+.seccion-menu {
+    background-color: var(--color-fondo-claro);
+    padding-bottom: 30px;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 30px auto;
+    box-shadow: 0 4px 10px var(--sombra-color);
+}
+
+.navegacion-menu {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--borde-claro);
+}
+
+.boton-menu {
+    background-color: var(--color-acento);
+    color: var(--color-fondo-claro);
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.boton-menu:hover {
+    background-color: var(--color-principal-oscuro);
+    transform: translateY(-2px);
+}
+
+.boton-menu.activo {
+    background-color: var(--color-principal-oscuro);
+    color: var(--color-fondo-claro);
+    transform: translateY(0);
+    box-shadow: inset 0 0 5px var(--sombra-color);
+}
+
+.contenedor-categorias-menu {
+    padding: 30px;
+    text-align: center;
+}
+
+.categoria-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.item-menu {
+    background-color: var(--color-fondo-claro);
+    border: 1px solid var(--borde-claro);
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 8px var(--sombra-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.item-menu:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px var(--sombra-color);
+}
+
+.item-menu img {
+    max-width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.item-menu p {
+    font-weight: bold;
+    color: var(--color-principal-oscuro);
+    margin: 0;
+}
+
+.oculto {
+    display: none;
+}
+/* Fin Seccion Menu */
+
+/* Sección Pie de Página */
+footer {
+    background-color: var(--color-fondo-tarjeta);
+    color: var(--color-texto-oscuro);
+    padding: 20px 0;
+    margin-top: 50px;
+    box-shadow: 0 -2px 8px var(--sombra-color);
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.seccion-pie-pagina {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    min-width: 160px;
+    padding: 10px 0;
+    border-right: 1px solid var(--borde-claro);
+}
+
+.seccion-pie-pagina:last-child {
+    border-right: none;
+}
+
+.seccion-pie-pagina i {
+    font-size: 2em;
+    color: var(--color-principal-oscuro);
+    margin-bottom: 8px;
+}
+
+.seccion-pie-pagina p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.seccion-pie-pagina h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--color-principal-oscuro);
+    font-size: 1.1em;
+}
+
+.redes-sociales .iconos-sociales {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.redes-sociales .iconos-sociales a {
+    color: var(--color-principal-oscuro);
+    font-size: 1.8em;
+    transition: color 0.3s ease;
+}
+
+.redes-sociales .iconos-sociales a:hover {
+    color: var(--color-acento);
+}
+
 
 /* SELECTOR DE ETIQUETA */
 
@@ -245,4 +449,167 @@ select {
   appearance: none;
 }
 
+
+/* Ajustes que se probo para que la pagina y las secciones sean responsivos */
+@media (max-width: 768px) {
+    .nav-principal ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .nav-principal ul li {
+        margin-left: 0;
+    }
+
+    .nav-secundaria ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-secundaria ul li a {
+        padding: 8px 10px;
+    }
+
+    .sobre-nosotros {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+        margin: 20px auto;
+    }
+
+    .imagen-sobre-nosotros {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 20px;
+    }
+
+    .boton-menu {
+        padding: 8px 15px;
+        font-size: 14px;
+        margin: 0 5px;
+    }
+
+    .categoria-menu {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+        padding: 0 15px;
+    }
+
+    .item-menu img {
+        height: 120px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 10px;
+        gap: 0;
+    }
+
+    .seccion-pie-pagina {
+        border-right: none;
+        border-bottom: 1px solid var(--borde-claro);
+        /* Usando color simplificado */
+        width: 90%;
+        max-width: 400px;
+        padding: 15px 0;
+        flex: unset;
+        min-width: unset;
+    }
+
+    .seccion-pie-pagina:last-child {
+        border-bottom: none;
+    }
+}
+/* Fin para Pagina y elementos Responsivos */
+
+/* CSS que se probo para Media Query para Móviles (<= 480px) */
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 10px;
+    }
+
+    .nombre-logo {
+        margin-bottom: 10px;
+    }
+
+    .nav-principal ul {
+        width: 100%;
+        justify-content: space-around;
+        margin-top: 10px;
+    }
+
+    .nav-secundaria ul {
+        gap: 5px;
+    }
+
+    .nav-secundaria ul li a {
+        font-size: 1em;
+        padding: 6px 10px;
+    }
+
+    .navegacion-menu {
+        flex-wrap: wrap;
+        padding: 15px 0;
+    }
+
+    .boton-menu {
+        flex-basis: 45%;
+        margin: 5px;
+    }
+
+    .contenedor-categorias-menu {
+        padding: 15px 10px;
+    }
+
+    .categoria-menu {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 0;
+    }
+
+    .item-menu img {
+        height: 100px;
+    }
+
+    .seccion-pie-pagina {
+        min-width: unset;
+        width: 95%;
+    }
+
+    /* Footer grid layout para <= 480px */
+    footer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0px;
+        padding: 10px;
+        max-width: unset;
+        margin: 0;
+    }
+
+    .seccion-pie-pagina {
+        flex: unset;
+        min-width: unset;
+        width: auto;
+        padding: 10px 5px;
+        text-align: center;
+
+        border-right: 1px solid var(--borde-claro);
+        /* Usando color simplificado */
+        border-bottom: 1px solid var(--borde-claro);
+        /* Usando color simplificado */
+    }
+
+    .seccion-pie-pagina:nth-child(3n) {
+        border-right: none;
+    }
+
+    .seccion-pie-pagina:nth-child(n + 4) {
+        border-bottom: none;
+    }
+}
+/* Fin Media Query para Móviles (<= 480px)  */
 
