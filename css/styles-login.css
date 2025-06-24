@@ -115,6 +115,15 @@ input[type="submit"] {
     text-decoration: underline; /* opcional, si quieres subrayado */
 }
 
+.parrafo a {
+  color: #007BFF; /* azul bonito */
+  text-decoration: none;
+}
+
+.parrafo a:hover {
+  text-decoration: underline;
+}
+
 
 textarea{
     width: 100%;
