@@ -24,7 +24,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <article class="container">
+        <section class="row">
+            <section class="col-xs-12 col-sm-6 col-md-4">
+<br></br>
+                <form action="/submit" method="post">
+    <fieldset>
+        <legend>
+            <section>
+                <h1 class="titulo1">Regístrate aquí para más información</h1>
+                <h2 class="titulo2">Te contactaremos a la brevedad.</h2>
+            </section>
+        </legend>
+  <!-- Desplegables -->
+  <select required>
+    <option value="" disabled selected>¿Qué producto te interesa?</option>
+    <option value="producto1">Producto 1</option>
+    <option value="producto2">Producto 2</option>
+  </select>
+
+  <select required>
+    <option value="" disabled selected>¿Qué carrera te gustaría estudiar?</option>
+    <option value="carrera1">Carrera 1</option>
+    <option value="carrera2">Carrera 2</option>
+  </select>
+
+  <select required>
+    <option value="" disabled selected>Elige el campus</option>
+    <option value="campus1">Campus 1</option>
+    <option value="campus2">Campus 2</option>
+  </select>
+
+
+                <input type="text" placeholder="Apellidos y Nombres" required>
+
+                <input type="email" placeholder="Correo electrónico" required>
+
+                <input type="tel" placeholder="Celular" required>    
+
+                <h2 class="parrafo">¿Cómo nos comunicamos contigo?</h2>
+
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="comunicacion" value="whatsapp">
+                            <h2 class="parrafo">Whatsapp</h2>
+                    </label>
+                    <label>
+                        <input type="radio" name="comunicacion" value="llamada">
+                            <h2 class="parrafo">Llamada</h2>
+                    </label>
+                </div>
+                
+                <label class="checkbox-label">
+                    <input type="checkbox" required>
+                        <p class="parrafo">Acepto las <a href="#">políticas de privacidad</a> y los <a href="#">términos y condiciones</a>.</p>
+                
+</div>
+</label>
+                <input type="submit">
+
+    </fieldset>
+</form>
+
+
+            </section>
+        </section>
+    </article>      
 </body>
 </html>
